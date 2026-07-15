@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { WORLD, newGame, flap, applyAction, tick, collides, difficultyForScore, inputAction } from './game-logic.js';
+import { readFileSync } from 'node:fs';
+import vm from 'node:vm';
+
+const sandbox = {};
+vm.runInNewContext(readFileSync(new URL('./game-logic.js', import.meta.url), 'utf8'), sandbox);
+const { WORLD, newGame, flap, applyAction, tick, collides, difficultyForScore, inputAction } = sandbox.FlappyAsimLogic;
 
 test('start transition makes the bird playable and moves it upward', () => {
   const state = applyAction(newGame(), inputAction('ArrowUp', 'ready'));
