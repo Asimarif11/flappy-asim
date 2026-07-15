@@ -17,12 +17,13 @@
         <p class="eyebrow">A tiny sky adventure</p>
         <h1 id="panel-title">flappy-asim</h1>
         <p id="panel-copy">Tap, click, or press <strong>↑</strong> to fly</p>
-        <button id="action" type="button">Start flying</button>
+        <button id="action" type="button" aria-controls="game" aria-describedby="panel-copy">Start flying</button>
         <p class="hint">Up Arrow · Space · click / tap</p>
       </section>
     </div>
     <p class="footer">Stay light. Watch the gaps.</p>
   </main>
-  <script type="module" src="game.js"></script>
+  <script src="game-logic.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
