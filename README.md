@@ -2,6 +2,60 @@
 
 A small, original Canvas game inspired by the classic one-button arcade format. It is self-contained and Windows-friendly: no install or build step is required.
 
+## Windows PowerShell setup from scratch
+
+These steps are for a new Windows computer where Git is not installed yet.
+
+1. Install **Git for Windows** from the official Git site: <https://git-scm.com/download/win>. Use the installer’s recommended options.
+2. Install the **Node.js LTS** release from the official Node.js site: <https://nodejs.org/en/download>. The installer includes `npm`.
+3. Close and reopen PowerShell after each installer finishes if the commands below are not recognized. Verify both installations:
+
+   ```powershell
+   git --version
+   node --version
+   npm --version
+   ```
+
+   Each command should print a version number.
+
+4. Clone the game and move into its folder:
+
+   ```powershell
+   git clone https://github.com/Asimarif11/flappy-asim.git
+   cd flappy-asim
+   ```
+
+5. Start playing in either of these ways:
+
+   - **Open directly:** in File Explorer, double-click `index.html`, or run this command from PowerShell:
+
+     ```powershell
+     Start-Process .\index.html
+     ```
+
+   - **Use a local server:** Python is optional. If Python is installed, run:
+
+     ```powershell
+     py -m http.server 8000
+     ```
+
+     Then open <http://localhost:8000>. If Python is not available, use the Node.js option:
+
+     ```powershell
+     npx --yes serve .
+     ```
+
+     Open the URL printed by `serve`. Press `Ctrl+C` in PowerShell to stop either server.
+
+6. Play with **Up Arrow** (primary), **Space**, or **click/tap** to flap or start. After a crash, use **R** or click/tap to restart. Press **Esc** to return to the title screen.
+7. Run the automated tests from the `flappy-asim` folder:
+
+   ```powershell
+   npm test
+   ```
+
+   A successful run reports 5 passing tests.
+
 ## Install and run on Windows
 
 ### Prerequisites
